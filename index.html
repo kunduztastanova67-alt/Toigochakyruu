@@ -1,33 +1,50 @@
 <!DOCTYPE html>
-<html lang="ky">
+<html lang="ru">
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width,
-      initial-scale=1.0,
-      maximum-scale=1.0,
-      user-scalable=no">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<title>Айдар & Дия</title>
+<meta
+    name="theme-color"
+    content="#f5efe8"
+>
+
+<title>Айдар & Дия — Свадебное приглашение</title>
+
+
+<!-- =========================
+     GOOGLE FONTS
+========================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marck+Script&family=Playfair+Display:wght@400;500;600&display=swap"
-      rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;600&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+>
 
+
+<!-- =========================
+     STYLE
+========================= -->
 
 <style>
 
-/* =====================================================
-   BASIC
-===================================================== */
+/* =========================
+   BASIC RESET
+========================= */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -35,1190 +52,1139 @@ html {
 }
 
 body {
-    background: #f7f5ed;
-    color: #20231a;
-    font-family: "Cormorant Garamond", serif;
+    width: 100%;
+    min-height: 100vh;
+
+    background: #f5efe8;
+    color: #292522;
+
+    font-family: 'Montserrat', sans-serif;
+
     overflow-x: hidden;
 }
 
-:root {
-    --green: #405d2b;
-    --light-green: #82996a;
-    --cream: #f7f5ed;
-    --white: #fffdf7;
-    --gold: #c49a3a;
-}
-
-
-/* =====================================================
-   MUSIC
-===================================================== */
-
-.music-btn {
-    position: fixed;
-
-    right: 18px;
-    bottom: 20px;
-
-    width: 50px;
-    height: 50px;
-
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.7);
-
-    background: rgba(64,93,43,.9);
-    color: white;
-
-    z-index: 9999;
-
-    font-size: 20px;
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,.2);
-}
-
-.music-btn.active {
-    display: flex;
-}
-
-
-/* =====================================================
-   FALLING LEAVES
-===================================================== */
-
-.leaves {
-    position: fixed;
-    inset: 0;
-
-    pointer-events: none;
-
-    overflow: hidden;
-
-    z-index: 500;
-}
-
-.leaf {
-    position: absolute;
-
-    top: -20px;
-
-    width: 13px;
-    height: 7px;
-
-    background: #b8c29b;
-
-    border-radius: 100% 0 100% 0;
-
-    opacity: .7;
-
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-
-    0% {
-        transform:
-            translateY(-50px)
-            translateX(0)
-            rotate(0);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: .7;
-    }
-
-    50% {
-        transform:
-            translateY(50vh)
-            translateX(50px)
-            rotate(180deg);
-    }
-
-    100% {
-        transform:
-            translateY(110vh)
-            translateX(-50px)
-            rotate(360deg);
-        opacity: 0;
-    }
-}
-
-
-/* =====================================================
-   INTRO
-===================================================== */
-
-#intro {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 10000;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            rgba(8,15,5,.30),
-            rgba(8,15,5,.50)
-        ),
-        url("images/photo1.jpg")
-        center center / cover no-repeat;
-
-    transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
-}
-
-#intro.hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-
-/* =====================================================
-   ENVELOPE
-===================================================== */
-
-.envelope-wrap {
-    width: min(88vw, 400px);
-
-    perspective: 1200px;
-}
-
-.envelope {
-    position: relative;
-
+img {
+    display: block;
     width: 100%;
+}
 
-    aspect-ratio: 1.35;
+button,
+input,
+select {
+    font-family: inherit;
+}
 
+button {
     cursor: pointer;
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.35);
-
-    animation: envelopeIn 1s ease;
-}
-
-@keyframes envelopeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(40px) scale(.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
 }
 
 
-/* body */
+/* =========================
+   VARIABLES
+========================= */
 
-.env-body {
-    position: absolute;
+:root {
 
-    inset: 0;
+    --cream: #f5efe8;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fffef8,
-            #ebe8da
-        );
+    --cream-dark: #ebe2d8;
 
-    z-index: 1;
+    --brown: #292522;
+
+    --brown-light: #554d46;
+
+    --gray: #8b8178;
+
+    --line: #cfc4b9;
+
+    --white: #ffffff;
+
 }
 
 
-/* left */
+/* =========================
+   GLOBAL CONTAINER
+========================= */
 
-.env-left {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 50%;
-    height: 100%;
-
-    background: #eeebdf;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 50%,
-            0 100%
-        );
-
-    z-index: 3;
-}
-
-
-/* right */
-
-.env-right {
-    position: absolute;
-
-    right: 0;
-    bottom: 0;
-
-    width: 50%;
-    height: 100%;
-
-    background: #e5e2d5;
-
-    clip-path:
-        polygon(
-            100% 0,
-            0 50%,
-            100% 100%
-        );
-
-    z-index: 3;
-}
-
-
-/* flap */
-
-.env-flap {
-    position: absolute;
-
-    top: 0;
-    left: 0;
+.container {
 
     width: 100%;
-    height: 68%;
 
-    background:
-        linear-gradient(
-            150deg,
-            #fffef8,
-            #eae7da
-        );
+    max-width: 680px;
 
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 100%
-        );
+    margin-left: auto;
+    margin-right: auto;
 
-    transform-origin: top center;
-
-    z-index: 6;
-
-    transition:
-        transform 1.3s
-        cubic-bezier(.7,0,.2,1);
 }
 
 
-/* opened */
-
-.envelope.open .env-flap {
-    transform: rotateX(180deg);
-}
-
-
-/* envelope text */
-
-.env-text {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 7;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 20px;
-}
-
-.env-names {
-    font-family: "Marck Script", cursive;
-
-    font-size:
-        clamp(42px, 10vw, 65px);
-
-    color: var(--green);
-
-    line-height: 1.1;
-}
-
-
-/* seal */
-
-.seal {
-    position: absolute;
-
-    left: 50%;
-    top: 52%;
-
-    transform: translate(-50%, -50%);
-
-    width: 70px;
-    height: 70px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #f4dc8f,
-            #c39a39,
-            #9b711b
-        );
-
-    border: 4px solid #b58a26;
-
-    z-index: 10;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    color: white;
-
-    font-family: "Marck Script", cursive;
-
-    font-size: 28px;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.2);
-}
-
-.env-hint {
-    position: absolute;
-
-    bottom: 16px;
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size: 13px;
-
-    color: #333329;
-}
-
-
-/* =====================================================
-   MAIN SITE
-===================================================== */
-
-#site {
-    opacity: 0;
-
-    transition: opacity 1.3s ease;
-}
-
-#site.show {
-    opacity: 1;
-}
-
-
-/* =====================================================
-   SECTION
-===================================================== */
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
-    position: relative;
 
     width: 100%;
 
-    padding: 90px 20px;
+    padding: 85px 22px;
 
-    background: var(--cream);
-
-    overflow: hidden;
-}
-
-.inner {
-    width: min(100%, 700px);
-
-    margin: auto;
-
-    text-align: center;
 }
 
 
-/* =====================================================
-   TYPOGRAPHY
-===================================================== */
+/* =========================
+   TEXT
+========================= */
 
-.script {
-    font-family: "Marck Script", cursive;
+.eyebrow {
 
-    color: var(--green);
+    font-size: 10px;
 
-    font-size:
-        clamp(52px, 13vw, 90px);
+    letter-spacing: 4px;
 
-    line-height: 1.05;
-}
+    text-transform: uppercase;
 
-.title {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        clamp(28px, 7vw, 44px);
-
-    color: var(--green);
+    color: var(--gray);
 
     margin-bottom: 25px;
+
 }
 
-.text {
-    font-size:
-        clamp(20px, 5vw, 27px);
+
+.heading {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-weight: 400;
+
+    font-size: clamp(
+        48px,
+        13vw,
+        82px
+    );
+
+    line-height: .88;
+
+}
+
+
+.body-text {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 23px;
 
     line-height: 1.55;
+
+    color: var(--brown-light);
+
 }
 
 
-/* =====================================================
-   HERO
-===================================================== */
+.divider {
 
-.hero {
-    position: relative;
-
-    min-height: 100svh;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            rgba(10,20,5,.25),
-            rgba(10,20,5,.45)
-        ),
-        url("images/photo2.jpg")
-        center center / cover no-repeat;
-
-    color: white;
-
-    padding: 30px;
-}
-
-.hero-content {
-    text-align: center;
-}
-
-.hero-date {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    letter-spacing: 5px;
-
-    font-size: 18px;
-
-    margin-bottom: 30px;
-}
-
-.hero .script {
-    color: white;
-
-    font-size:
-        clamp(65px, 17vw, 110px);
-
-    text-shadow:
-        0 3px 20px rgba(0,0,0,.4);
-}
-
-.hero-line {
-    width: 100px;
+    width: 55px;
 
     height: 1px;
 
-    background: white;
+    background: #aaa097;
 
-    margin: 28px auto;
-}
-
-.hero-text {
-    font-size: 23px;
-
-    line-height: 1.5;
-}
-
-.scroll {
-    position: absolute;
-
-    bottom: 25px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    font-size: 14px;
-
-    letter-spacing: 2px;
-
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-
-    0%,100% {
-        transform:
-            translate(-50%,0);
-    }
-
-    50% {
-        transform:
-            translate(-50%,10px);
-    }
+    margin: 32px auto;
 
 }
 
 
-/* =====================================================
-   INVITATION
-===================================================== */
+/* =========================
+   MUSIC BUTTON
+========================= */
 
-.invitation {
-    padding-top: 100px;
-}
+.music-button {
 
-.invitation .script {
-    margin-bottom: 45px;
-}
+    position: fixed;
 
-.invitation p {
-    margin-bottom: 25px;
-}
+    right: 18px;
 
+    top: 18px;
 
-/* =====================================================
-   DATE
-===================================================== */
+    z-index: 9999;
 
-.date-section {
-    padding-top: 50px;
-}
+    width: 50px;
 
-.big-date {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    color: var(--green);
-
-    font-size:
-        clamp(80px, 20vw, 125px);
-
-    line-height: .9;
-}
-
-.month {
-    font-family:
-        "Marck Script",
-        cursive;
-
-    color: var(--green);
-
-    font-size: 45px;
-
-    margin-top: 15px;
-}
-
-.year {
-    font-size: 20px;
-
-    letter-spacing: 5px;
-
-    margin-top: 10px;
-}
-
-
-/* =====================================================
-   CALENDAR
-===================================================== */
-
-.calendar {
-    max-width: 450px;
-
-    margin: 45px auto 0;
-
-    border-top:
-        1px solid rgba(64,93,43,.3);
-
-    border-bottom:
-        1px solid rgba(64,93,43,.3);
-
-    padding: 20px 5px;
-}
-
-.week {
-    display: grid;
-
-    grid-template-columns:
-        repeat(7,1fr);
-
-    margin-bottom: 15px;
-
-    font-size: 15px;
-
-    color: #77776d;
-}
-
-.days {
-    display: grid;
-
-    grid-template-columns:
-        repeat(7,1fr);
-
-    gap: 12px 5px;
-
-    font-size: 19px;
-}
-
-.day {
-    aspect-ratio: 1;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-.day.selected {
-    position: relative;
-
-    color: white;
-}
-
-.day.selected::before {
-    content: "";
-
-    position: absolute;
-
-    width: 42px;
-    height: 42px;
+    height: 50px;
 
     border-radius: 50%;
 
-    background: var(--green);
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        .65
+    );
 
-    z-index: -1;
-}
+    background: rgba(
+        40,
+        35,
+        31,
+        .78
+    );
 
+    color: #ffffff;
 
-/* =====================================================
-   TIME
-===================================================== */
-
-.time {
-    margin-top: 40px;
-}
-
-.time-title {
-    font-family:
-        "Marck Script",
-        cursive;
-
-    color: var(--green);
-
-    font-size: 42px;
-}
-
-.time-value {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size: 48px;
-
-    margin-top: 5px;
-}
-
-
-/* =====================================================
-   PHOTO BLOCK
-===================================================== */
-
-.photo-block {
-    padding: 50px 20px;
-}
-
-.photo-frame {
-    max-width: 620px;
-
-    margin: auto;
-
-    padding: 10px;
-
-    background: #fffef8;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.18);
-
-    transform: rotate(-2deg);
-
-    position: relative;
-}
-
-.photo-frame img {
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    object-fit: cover;
-}
-
-
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-.countdown-section {
-    min-height: 620px;
+    font-size: 19px;
 
     display: flex;
 
     align-items: center;
 
-    background:
-        linear-gradient(
-            rgba(20,20,10,.35),
-            rgba(20,20,10,.58)
-        ),
-        url("images/photo3.jpg")
-        center center / cover no-repeat;
-
-    color: white;
-}
-
-.countdown-inner {
-    width: 100%;
-
-    max-width: 700px;
-
-    margin: auto;
-
-    text-align: center;
-}
-
-.count-title {
-    font-family:
-        "Marck Script",
-        cursive;
-
-    font-size:
-        clamp(58px, 14vw, 95px);
-
-    margin-bottom: 45px;
-}
-
-.countdown {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap: 8px;
-}
-
-.number {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        clamp(32px, 8vw, 57px);
-}
-
-.label {
-    font-size: 13px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   LOCATION
-===================================================== */
-
-.location {
-    padding-top: 90px;
-}
-
-.location-heart {
-    font-size: 42px;
-
-    margin-bottom: 15px;
-
-    color: var(--green);
-}
-
-.restaurant {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    color: var(--green);
-
-    font-size:
-        clamp(30px, 7vw, 45px);
-
-    margin: 20px 0 12px;
-}
-
-.address {
-    font-size: 22px;
-
-    line-height: 1.5;
-
-    margin-bottom: 30px;
-}
-
-.map-btn {
-    display: inline-flex;
-
-    align-items: center;
     justify-content: center;
 
-    padding: 13px 30px;
+    backdrop-filter: blur(12px);
 
-    min-width: 230px;
+    -webkit-backdrop-filter: blur(12px);
 
-    border-radius: 30px;
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.18);
 
-    background: var(--green);
+    transition: .3s ease;
 
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 19px;
 }
 
 
-/* =====================================================
-   GALLERY
-===================================================== */
+.music-button:hover {
 
-.gallery {
-    background: #eae8dd;
+    transform: scale(1.06);
 
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
-.gallery-title {
-    margin-bottom: 45px;
-}
 
-.gallery-grid {
-    width: min(100%, 700px);
+/* =========================
+   HERO
+========================= */
 
-    margin: auto;
+.hero {
 
-    display: grid;
+    position: relative;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    width: 100%;
 
-    gap: 8px;
-}
+    min-height: 100svh;
 
-.gallery-item {
     overflow: hidden;
 
-    aspect-ratio: 1;
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    background: #222;
+
 }
 
-.gallery-item:first-child {
-    grid-column: span 2;
 
-    aspect-ratio: 4/5;
-}
+.hero-image {
 
-.gallery-item img {
+    position: absolute;
+
+    inset: 0;
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
-    display: block;
 }
 
 
-/* =====================================================
-   RSVP
-===================================================== */
+.hero-overlay {
 
-.rsvp-title {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.12) 40%,
+            rgba(0,0,0,.78) 100%
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding:
+
+        40px
+        20px
+        65px;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.hero-label {
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+
+    opacity: .9;
+
+}
+
+
+.hero-names {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-weight: 300;
+
+    font-size: clamp(
+        62px,
+        17vw,
+        110px
+    );
+
+    line-height: .72;
+
+}
+
+
+.hero-amp {
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    margin:
+
+        18px
+        0;
+
+}
+
+
+.hero-date {
+
+    margin-top: 38px;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+
+    text-align: center;
+
+}
+
+
+.intro .heading {
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   PHOTO BLOCK
+========================= */
+
+.photo-section {
+
+    width: 100%;
+
+    padding:
+
+        0
+        15px
+        85px;
+
+}
+
+
+.photo-wrapper {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+.photo-wrapper img {
+
+    width: 100%;
+
+    height: 680px;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================
+   DATE SECTION
+========================= */
+
+.date-section {
+
+    background: var(--cream-dark);
+
+    text-align: center;
+
+}
+
+
+.big-date {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: clamp(
+        100px,
+        25vw,
+        150px
+    );
+
+    line-height: .72;
+
+    font-weight: 300;
+
+}
+
+
+.month {
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.year {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 32px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar {
+
+    width: 100%;
+
+    max-width: 370px;
+
+    margin:
+
+        50px
+        auto
+        0;
+
+}
+
+
+.calendar-title {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.calendar-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 7px;
+
+}
+
+
+.calendar-cell {
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+}
+
+
+.calendar-week {
+
+    font-size: 9px;
+
+    color: var(--gray);
+
+    letter-spacing: 1px;
+
+}
+
+
+.calendar-wedding-day {
+
+    width: 35px;
+
+    height: 35px;
+
+    margin: auto;
+
+    border:
+
+        1px solid
+        #514941;
+
+    border-radius: 50%;
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+
+    text-align: center;
+
+}
+
+
+.countdown {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 45px;
+
+}
+
+
+.countdown-item {
+
+    border-top:
+
+        1px solid
+        #bbb0a5;
+
+    padding-top: 16px;
+
+}
+
+
+.count-number {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 43px;
+
+    line-height: 1;
+
+}
+
+
+.count-label {
+
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--gray);
+
+}
+
+
+/* =========================
+   PROGRAM SECTION
+========================= */
+
+.program-section {
+
+    background: var(--brown);
+
+    color: white;
+
+}
+
+
+.program-section .eyebrow {
+
+    color: #bcb0a5;
+
+}
+
+
+.program {
+
+    margin-top: 45px;
+
+}
+
+
+.program-item {
+
+    display: grid;
+
+    grid-template-columns:
+        75px
+        1fr;
+
+    gap: 20px;
+
+    padding:
+
+        27px
+        0;
+
+    border-top:
+
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .18
+        );
+
+}
+
+
+.program-time {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 29px;
+
+}
+
+
+.program-title {
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.program-description {
+
+    font-size: 11px;
+
+    line-height: 1.65;
+
+    color: #bdb2a8;
+
+}
+
+
+/* =========================
+   SECOND PHOTO
+========================= */
+
+.photo-section-second {
+
+    width: 100%;
+
+    padding:
+
+        0
+        15px;
+
+}
+
+
+.photo-section-second img {
+
+    width: 100%;
+
+    height: 680px;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-section {
+
+    text-align: center;
+
+}
+
+
+.location-card {
+
+    margin-top: 45px;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    padding:
+
+        42px
+        20px;
+
+}
+
+
+.location-name {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 36px;
+
+    line-height: 1;
+
     margin-bottom: 20px;
+
 }
 
-.rsvp-subtitle {
-    font-size: 21px;
 
-    line-height: 1.5;
+.location-address {
 
-    margin-bottom: 35px;
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: #70675f;
+
 }
 
-.form {
+
+.map-button {
+
+    display: inline-block;
+
+    margin-top: 28px;
+
+    padding:
+
+        14px
+        28px;
+
+    border:
+
+        1px solid
+        #514941;
+
+    color: #292522;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+
+}
+
+
+.map-button:hover {
+
+    background: var(--brown);
+
+    color: white;
+
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp-section {
+
+    background: var(--cream-dark);
+
+}
+
+
+.rsvp-container {
+
     max-width: 600px;
 
     margin: auto;
 
+    text-align: center;
+
+}
+
+
+.rsvp-form {
+
+    margin-top: 45px;
+
     text-align: left;
+
 }
 
-.group {
-    margin-bottom: 25px;
+
+.form-field {
+
+    margin-bottom: 22px;
+
 }
 
-.form-label {
+
+.form-field label {
+
     display: block;
 
-    font-size: 20px;
+    margin-bottom: 9px;
 
-    margin-bottom: 12px;
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #716860;
+
 }
 
-.option {
-    display: flex;
 
-    align-items: center;
+.form-field input,
+.form-field select {
 
-    gap: 10px;
-
-    margin: 12px 0;
-
-    font-size: 19px;
-}
-
-.option input {
-    width: 18px;
-    height: 18px;
-}
-
-.input {
     width: 100%;
 
-    padding: 14px 15px;
+    height: 52px;
 
-    border: 1px solid #aaa;
+    padding:
 
-    border-radius: 8px;
+        0
+        15px;
 
-    background: rgba(255,255,255,.7);
+    border:
+
+        1px solid
+        #c8bdb1;
+
+    background: #f9f5f0;
+
+    color: #292522;
 
     outline: none;
 
-    font-size: 18px;
+    font-size: 14px;
+
+    border-radius: 0;
+
 }
 
-.counter {
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
+.form-field input:focus,
+.form-field select:focus {
 
-    gap: 25px;
+    border-color: #776d64;
 
-    margin: 15px 0;
 }
 
-.counter-btn {
-    width: 43px;
-    height: 43px;
 
-    border: none;
+.submit-button {
 
-    border-radius: 50%;
-
-    background: var(--green);
-
-    color: white;
-
-    font-size: 25px;
-}
-
-.people {
-    min-width: 30px;
-
-    text-align: center;
-
-    font-size: 25px;
-}
-
-.submit {
     width: 100%;
 
+    min-height: 55px;
+
     border: none;
 
-    border-radius: 8px;
-
-    background: var(--green);
+    background: var(--brown);
 
     color: white;
 
-    padding: 15px;
+    font-size: 10px;
 
-    font-size: 21px;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+
 }
 
 
-/* =====================================================
-   HOSTS
-===================================================== */
+.submit-button:hover {
 
-.hosts {
-    padding-top: 70px;
+    opacity: .85;
 
-    padding-bottom: 90px;
 }
 
-.hosts-title {
-    font-size: 22px;
 
-    margin-bottom: 25px;
-}
+.rsvp-success {
 
-.hosts-names {
+    display: none;
+
+    margin-top: 35px;
+
     font-family:
-        "Marck Script",
-        cursive;
+        'Cormorant Garamond',
+        serif;
 
-    color: var(--green);
+    font-size: 30px;
 
-    font-size:
-        clamp(50px, 12vw, 80px);
+    line-height: 1.3;
 
-    line-height: 1.1;
-
-    margin-bottom: 30px;
-}
-
-.hosts-text {
-    font-size: 25px;
-
-    line-height: 1.5;
 }
 
 
-/* =====================================================
-   FINAL
-===================================================== */
+/* =========================
+   FINAL SECTION
+========================= */
 
-.final {
-    min-height: 650px;
+.final-section {
+
+    min-height: 75svh;
 
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            rgba(10,20,5,.25),
-            rgba(10,20,5,.55)
-        ),
-        url("images/photo1.jpg")
-        center center / cover no-repeat;
+    background: var(--brown);
 
     color: white;
-}
 
-.final .script {
-    color: white;
-
-    font-size:
-        clamp(65px, 16vw, 105px);
-}
-
-.final-text {
-    margin-top: 25px;
-
-    font-size: 23px;
-
-    line-height: 1.5;
 }
 
 
-/* =====================================================
-   ANIMATION
-===================================================== */
+.final-section .eyebrow {
+
+    color: #bdb1a7;
+
+}
+
+
+.final-names {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-weight: 300;
+
+    font-size: clamp(
+        65px,
+        17vw,
+        105px
+    );
+
+    line-height: .78;
+
+}
+
+
+.final-date {
+
+    margin-top: 38px;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #bcb0a6;
+
+}
+
+
+/* =========================
+   FADE ANIMATION
+========================= */
 
 .reveal {
+
     opacity: 0;
 
-    transform: translateY(35px);
+    transform:
+        translateY(35px);
 
     transition:
         opacity 1s ease,
         transform 1s ease;
+
 }
+
 
 .reveal.visible {
+
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
+
 }
 
 
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media(max-width:480px) {
+@media(max-width: 600px) {
 
     .section {
+
         padding:
-            75px 18px;
+
+            70px
+            20px;
+
     }
 
-    .countdown {
-        gap: 3px;
+
+    .photo-wrapper img {
+
+        height: 570px;
+
     }
 
-    .number {
-        font-size: 29px;
+
+    .photo-section-second img {
+
+        height: 570px;
+
     }
 
-    .label {
-        font-size: 11px;
+
+    .program-item {
+
+        grid-template-columns:
+            65px
+            1fr;
+
+    }
+
+
+    .count-number {
+
+        font-size: 37px;
+
+    }
+
+
+    .count-label {
+
+        font-size: 7px;
+
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media(max-width: 370px) {
+
+    .hero-names {
+
+        font-size: 57px;
+
+    }
+
+
+    .count-number {
+
+        font-size: 32px;
+
+    }
+
+
+    .program-time {
+
+        font-size: 25px;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -1226,104 +1192,31 @@ body {
 
 
 <!-- =====================================================
-     LEAVES
-===================================================== -->
-
-<div class="leaves">
-
-    <span class="leaf"
-          style="left:5%;animation-duration:9s;"></span>
-
-    <span class="leaf"
-          style="left:17%;animation-duration:12s;animation-delay:2s;"></span>
-
-    <span class="leaf"
-          style="left:29%;animation-duration:10s;animation-delay:4s;"></span>
-
-    <span class="leaf"
-          style="left:42%;animation-duration:13s;animation-delay:1s;"></span>
-
-    <span class="leaf"
-          style="left:55%;animation-duration:11s;animation-delay:5s;"></span>
-
-    <span class="leaf"
-          style="left:68%;animation-duration:14s;animation-delay:3s;"></span>
-
-    <span class="leaf"
-          style="left:80%;animation-duration:10s;animation-delay:6s;"></span>
-
-    <span class="leaf"
-          style="left:93%;animation-duration:12s;animation-delay:2s;"></span>
-
-</div>
-
-
-<!-- =====================================================
-     INTRO
-===================================================== -->
-
-<div id="intro">
-
-    <div class="envelope-wrap">
-
-        <div class="envelope" id="envelope">
-
-            <div class="env-body"></div>
-
-            <div class="env-left"></div>
-
-            <div class="env-right"></div>
-
-            <div class="env-flap"></div>
-
-            <div class="env-text">
-
-                <div class="env-names">
-                    Айдар & Дия
-                </div>
-
-                <div class="seal">
-                    A&D
-                </div>
-
-                <div class="env-hint">
-                    Чакыруу баракчасын ачуу үчүн басыңыз
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
      MUSIC
 ===================================================== -->
 
 <audio
-    id="music"
-    src="music/music.m4a"
+    id="weddingMusic"
     loop
-    preload="auto">
+    preload="auto"
+>
+
+    <source
+        src="HOME Resonance.m4a"
+        type="audio/mp4"
+    >
+
 </audio>
 
+
 <button
-    class="music-btn"
-    id="musicBtn">
-
-    ♪
-
+    class="music-button"
+    id="musicButton"
+    aria-label="Музыка"
+>
+    ♫
 </button>
 
-
-<!-- =====================================================
-     MAIN SITE
-===================================================== -->
-
-<main id="site">
 
 
 <!-- =====================================================
@@ -1332,678 +1225,1052 @@ body {
 
 <section class="hero">
 
-    <div class="hero-content reveal">
+
+    <!-- ПЕРВОЕ ФОТО -->
+
+    <img
+        class="hero-image"
+        src="IMG_8478.jpeg"
+        alt="Айдар и Дия"
+    >
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-label">
+            Wedding Invitation
+        </div>
+
+
+        <div class="hero-names">
+
+            Айдар
+
+            <div class="hero-amp">
+                &
+            </div>
+
+            Дия
+
+        </div>
+
 
         <div class="hero-date">
+
             15 • 09 • 2026
+
         </div>
 
-        <div class="script">
-            Айдар & Дия
-        </div>
 
-        <div class="hero-line"></div>
-
-        <div class="hero-text">
-            Сүйүүбүздүн эң өзгөчө күнүн
-            сиздер менен бирге өткөргүбүз келет
-        </div>
-
-    </div>
-
-
-    <div class="scroll">
-        ↓ Төмөн жылдырыңыз
     </div>
 
 </section>
+
 
 
 <!-- =====================================================
-     INVITATION
+     INTRODUCTION
 ===================================================== -->
 
-<section class="section invitation">
+<section class="section intro reveal">
 
-    <div class="inner reveal">
 
-        <div class="title">
-            Урматтуу коноктор!
+    <div class="container">
+
+
+        <div class="eyebrow">
+            Дорогие гости
         </div>
 
-        <div class="script">
-            Айдар & Дия
-        </div>
 
-        <p class="text">
-            Сиздерди биздин
-            кубанычыбызды бөлүшүп,
-            өзгөчө күнүбүздүн
-            күбөсү болууга чакырабыз.
+        <h1 class="heading">
+
+            Мы женимся
+
+        </h1>
+
+
+        <div class="divider"></div>
+
+
+        <p class="body-text">
+
+            В этот особенный день
+            мы хотим разделить с вами
+            нашу радость, любовь
+            и счастье.
+
         </p>
 
-        <p class="text">
-            Тойго келип,
-            конок болуп кетиңиздер!
+
+        <div class="divider"></div>
+
+
+        <p class="body-text">
+
+            Будем счастливы видеть вас
+            рядом с нами.
+
         </p>
+
 
     </div>
 
 </section>
+
+
+
+<!-- =====================================================
+     PHOTO 1
+===================================================== -->
+
+<section class="photo-section reveal">
+
+
+    <div class="photo-wrapper">
+
+
+        <img
+            src="IMG_8478.jpeg"
+            alt="Айдар и Дия"
+        >
+
+
+    </div>
+
+
+</section>
+
 
 
 <!-- =====================================================
      DATE
 ===================================================== -->
 
-<section class="section date-section">
+<section class="section date-section reveal">
 
-    <div class="inner reveal">
 
-        <div class="script">
-            Биздин күн
+    <div class="container">
+
+
+        <div class="eyebrow">
+            Сохраните дату
         </div>
+
 
         <div class="big-date">
             15
         </div>
 
+
         <div class="month">
-            Сентябрь
+            Сентября
         </div>
+
 
         <div class="year">
             2026
         </div>
 
 
+
         <!-- CALENDAR -->
 
         <div class="calendar">
 
-            <div class="week">
-                <span>Дш</span>
-                <span>Шш</span>
-                <span>Шр</span>
-                <span>Бш</span>
-                <span>Жм</span>
-                <span>Иш</span>
-                <span>Жк</span>
+
+            <div class="calendar-title">
+                Сентябрь 2026
             </div>
 
 
-            <div class="days">
+            <div class="calendar-grid">
 
-                <span class="day"></span>
 
-                <span class="day">1</span>
-                <span class="day">2</span>
-                <span class="day">3</span>
-                <span class="day">4</span>
-                <span class="day">5</span>
-                <span class="day">6</span>
+                <!-- WEEK -->
 
-                <span class="day">7</span>
-                <span class="day">8</span>
-                <span class="day">9</span>
-                <span class="day">10</span>
-                <span class="day">11</span>
-                <span class="day">12</span>
-                <span class="day">13</span>
+                <div class="calendar-cell calendar-week">
+                    ПН
+                </div>
 
-                <span class="day">14</span>
+                <div class="calendar-cell calendar-week">
+                    ВТ
+                </div>
 
-                <span class="day selected">
-                    15
-                </span>
+                <div class="calendar-cell calendar-week">
+                    СР
+                </div>
 
-                <span class="day">16</span>
-                <span class="day">17</span>
-                <span class="day">18</span>
-                <span class="day">19</span>
-                <span class="day">20</span>
+                <div class="calendar-cell calendar-week">
+                    ЧТ
+                </div>
 
-                <span class="day">21</span>
-                <span class="day">22</span>
-                <span class="day">23</span>
-                <span class="day">24</span>
-                <span class="day">25</span>
-                <span class="day">26</span>
-                <span class="day">27</span>
+                <div class="calendar-cell calendar-week">
+                    ПТ
+                </div>
 
-                <span class="day">28</span>
-                <span class="day">29</span>
-                <span class="day">30</span>
+                <div class="calendar-cell calendar-week">
+                    СБ
+                </div>
+
+                <div class="calendar-cell calendar-week">
+                    ВС
+                </div>
+
+
+
+                <!-- 1 -->
+
+                <div class="calendar-cell"></div>
+
+                <div class="calendar-cell">
+                    1
+                </div>
+
+                <div class="calendar-cell">
+                    2
+                </div>
+
+                <div class="calendar-cell">
+                    3
+                </div>
+
+                <div class="calendar-cell">
+                    4
+                </div>
+
+                <div class="calendar-cell">
+                    5
+                </div>
+
+                <div class="calendar-cell">
+                    6
+                </div>
+
+
+
+                <!-- 7 -->
+
+                <div class="calendar-cell">
+                    7
+                </div>
+
+                <div class="calendar-cell">
+                    8
+                </div>
+
+                <div class="calendar-cell">
+                    9
+                </div>
+
+                <div class="calendar-cell">
+                    10
+                </div>
+
+                <div class="calendar-cell">
+                    11
+                </div>
+
+                <div class="calendar-cell">
+                    12
+                </div>
+
+                <div class="calendar-cell">
+                    13
+                </div>
+
+
+
+                <!-- 14-20 -->
+
+                <div class="calendar-cell">
+                    14
+                </div>
+
+                <div class="calendar-cell">
+
+                    <div class="calendar-wedding-day">
+                        15
+                    </div>
+
+                </div>
+
+                <div class="calendar-cell">
+                    16
+                </div>
+
+                <div class="calendar-cell">
+                    17
+                </div>
+
+                <div class="calendar-cell">
+                    18
+                </div>
+
+                <div class="calendar-cell">
+                    19
+                </div>
+
+                <div class="calendar-cell">
+                    20
+                </div>
+
+
+
+                <!-- 21-27 -->
+
+                <div class="calendar-cell">
+                    21
+                </div>
+
+                <div class="calendar-cell">
+                    22
+                </div>
+
+                <div class="calendar-cell">
+                    23
+                </div>
+
+                <div class="calendar-cell">
+                    24
+                </div>
+
+                <div class="calendar-cell">
+                    25
+                </div>
+
+                <div class="calendar-cell">
+                    26
+                </div>
+
+                <div class="calendar-cell">
+                    27
+                </div>
+
+
+
+                <!-- 28-30 -->
+
+                <div class="calendar-cell">
+                    28
+                </div>
+
+                <div class="calendar-cell">
+                    29
+                </div>
+
+                <div class="calendar-cell">
+                    30
+                </div>
+
+                <div class="calendar-cell"></div>
+
+                <div class="calendar-cell"></div>
+
+                <div class="calendar-cell"></div>
+
+                <div class="calendar-cell"></div>
+
 
             </div>
+
 
         </div>
 
 
-        <!-- TIME -->
-
-        <div class="time">
-
-            <div class="time-title">
-                Тойдун башталышы
-            </div>
-
-            <div class="time-value">
-                15:00
-            </div>
-
-        </div>
-
     </div>
+
 
 </section>
 
-
-<!-- =====================================================
-     PHOTO
-===================================================== -->
-
-<section class="photo-block section">
-
-    <div class="photo-frame reveal">
-
-        <img
-            src="images/photo2.jpg"
-            alt="Айдар & Дия">
-
-    </div>
-
-</section>
 
 
 <!-- =====================================================
      COUNTDOWN
 ===================================================== -->
 
-<section class="section countdown-section">
+<section class="section countdown-section reveal">
 
-    <div class="countdown-inner reveal">
 
-        <div class="count-title">
-            Тойго чейин:
+    <div class="container">
+
+
+        <div class="eyebrow">
+            До нашего дня
         </div>
+
+
+        <h2 class="heading">
+            Осталось
+        </h2>
+
 
 
         <div class="countdown">
 
-            <div>
-                <div class="number"
-                     id="days">
-                    00
+
+            <div class="countdown-item">
+
+                <div
+                    class="count-number"
+                    id="days"
+                >
+                    0
                 </div>
 
-                <div class="label">
-                    КҮН
+                <div class="count-label">
+                    дней
                 </div>
+
             </div>
 
 
-            <div>
-                <div class="number"
-                     id="hours">
-                    00
+
+            <div class="countdown-item">
+
+                <div
+                    class="count-number"
+                    id="hours"
+                >
+                    0
                 </div>
 
-                <div class="label">
-                    СААТ
+                <div class="count-label">
+                    часов
                 </div>
+
             </div>
 
 
-            <div>
-                <div class="number"
-                     id="minutes">
-                    00
+
+            <div class="countdown-item">
+
+                <div
+                    class="count-number"
+                    id="minutes"
+                >
+                    0
                 </div>
 
-                <div class="label">
-                    МҮНӨТ
+                <div class="count-label">
+                    минут
                 </div>
+
             </div>
 
 
-            <div>
-                <div class="number"
-                     id="seconds">
-                    00
+
+            <div class="countdown-item">
+
+                <div
+                    class="count-number"
+                    id="seconds"
+                >
+                    0
                 </div>
 
-                <div class="label">
-                    СЕКУНД
+                <div class="count-label">
+                    секунд
                 </div>
+
             </div>
+
 
         </div>
 
+
     </div>
 
+
 </section>
+
+
+
+<!-- =====================================================
+     PROGRAM
+===================================================== -->
+
+<section class="section program-section reveal">
+
+
+    <div class="container">
+
+
+        <div class="eyebrow">
+            Программа дня
+        </div>
+
+
+        <h2 class="heading">
+            Наш день
+        </h2>
+
+
+
+        <div class="program">
+
+
+            <!-- EVENT 1 -->
+
+            <div class="program-item">
+
+
+                <div class="program-time">
+                    15:00
+                </div>
+
+
+                <div>
+
+                    <div class="program-title">
+                        Сбор гостей
+                    </div>
+
+
+                    <div class="program-description">
+
+                        Встречаем гостей
+                        и начинаем наш
+                        особенный день.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- EVENT 2 -->
+
+            <div class="program-item">
+
+
+                <div class="program-time">
+                    16:00
+                </div>
+
+
+                <div>
+
+                    <div class="program-title">
+                        Торжественная часть
+                    </div>
+
+
+                    <div class="program-description">
+
+                        Самые важные
+                        и трогательные
+                        моменты нашего дня.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- EVENT 3 -->
+
+            <div class="program-item">
+
+
+                <div class="program-time">
+                    17:00
+                </div>
+
+
+                <div>
+
+                    <div class="program-title">
+                        Праздничный вечер
+                    </div>
+
+
+                    <div class="program-description">
+
+                        Ужин, музыка,
+                        танцы и счастливые
+                        моменты вместе.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PHOTO 2
+===================================================== -->
+
+<section class="photo-section-second reveal">
+
+
+    <img
+        src="IMG_8479.jpeg"
+        alt="Айдар и Дия"
+    >
+
+
+</section>
+
 
 
 <!-- =====================================================
      LOCATION
 ===================================================== -->
 
-<section class="section location">
-
-    <div class="inner reveal">
-
-        <div class="location-heart">
-            ♡
-        </div>
-
-        <div class="script">
-            Дарегибиз
-        </div>
+<section class="section location-section reveal">
 
 
-        <div class="restaurant">
-            «Салтанат» рестораны
+    <div class="container">
+
+
+        <div class="eyebrow">
+            Место встречи
         </div>
 
 
-        <div class="address">
+        <h2 class="heading">
+            Где мы будем
+        </h2>
 
-            Бишкек шаары
 
-            <br>
 
-            Тойдун башталышы:
-            <strong>15:00</strong>
+        <div class="location-card">
+
+
+            <div class="location-name">
+                Название места
+            </div>
+
+
+            <div class="location-address">
+
+                Бишкек
+
+                <br>
+
+                Здесь будет указан
+                точный адрес
+
+            </div>
+
+
+            <!--
+            ЗДЕСЬ ПОТОМ ПОСТАВИМ
+            НАСТОЯЩУЮ ССЫЛКУ НА КАРТУ
+            -->
+
+
+            <a
+                class="map-button"
+                href="https://maps.google.com/"
+                target="_blank"
+            >
+
+                Открыть карту
+
+            </a>
+
 
         </div>
 
-
-        <a
-            class="map-btn"
-            href="https://www.google.com/maps/search/?api=1&query=Салтанат+ресторан+Бишкек"
-            target="_blank">
-
-            📍 Картадан көрүү
-
-        </a>
 
     </div>
 
-</section>
-
-
-<!-- =====================================================
-     GALLERY
-===================================================== -->
-
-<section class="section gallery">
-
-    <div class="inner reveal">
-
-        <div class="script gallery-title">
-            Биздин көз ирмемдер
-        </div>
-
-
-        <div class="gallery-grid">
-
-            <div class="gallery-item">
-
-                <img
-                    src="images/photo1.jpg"
-                    alt="Wedding">
-
-            </div>
-
-
-            <div class="gallery-item">
-
-                <img
-                    src="images/photo2.jpg"
-                    alt="Wedding">
-
-            </div>
-
-
-            <div class="gallery-item">
-
-                <img
-                    src="images/photo3.jpg"
-                    alt="Wedding">
-
-            </div>
-
-        </div>
-
-    </div>
 
 </section>
+
 
 
 <!-- =====================================================
      RSVP
 ===================================================== -->
 
-<section class="section">
+<section class="section rsvp-section reveal">
 
-    <div class="inner reveal">
 
-        <div class="script rsvp-title">
-            Тойго келесизби?
+    <div class="rsvp-container">
+
+
+        <div class="eyebrow">
+            Подтверждение
         </div>
 
-        <div class="rsvp-subtitle">
-            Келериңизди алдын ала билдирип,
-            бизге жардам бериңиз.
-        </div>
+
+        <h2 class="heading">
+            Вы придёте?
+        </h2>
+
+
+        <div class="divider"></div>
+
+
+        <p class="body-text">
+
+            Пожалуйста,
+            подтвердите своё присутствие.
+
+        </p>
+
 
 
         <form
-            class="form"
-            id="rsvpForm">
-
-
-            <!-- ATTENDANCE -->
-
-            <div class="group">
-
-                <label class="form-label">
-                    Келесизби?
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="attendance"
-                        value="Ооба, барам"
-                        required>
-
-                    Ооба, барам
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="attendance"
-                        value="Жубайым менен барам">
-
-                    Мен жубайым менен барам
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="attendance"
-                        value="Бара албайм">
-
-                    Бара албайм
-
-                </label>
-
-            </div>
-
-
-            <!-- PEOPLE -->
-
-            <div class="group">
-
-                <label class="form-label">
-                    Канча адам менен келесиз?
-                </label>
-
-
-                <div class="counter">
-
-                    <button
-                        type="button"
-                        class="counter-btn"
-                        id="minus">
-
-                        −
-
-                    </button>
-
-
-                    <div
-                        class="people"
-                        id="people">
-
-                        1
-
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="counter-btn"
-                        id="plus">
-
-                        +
-
-                    </button>
-
-                </div>
-
-            </div>
+            class="rsvp-form"
+            id="rsvpForm"
+        >
 
 
             <!-- NAME -->
 
-            <div class="group">
+            <div class="form-field">
 
-                <label
-                    class="form-label"
-                    for="name">
 
-                    Атыңызды жазыңыз
+                <label for="guestName">
+
+                    Имя и фамилия
 
                 </label>
 
 
                 <input
-                    class="input"
-                    id="name"
+                    id="guestName"
                     type="text"
-                    placeholder="Атыңызды жазыңыз"
-                    required>
+                    placeholder="Введите имя"
+                    required
+                >
+
 
             </div>
 
 
+
+            <!-- ATTENDANCE -->
+
+            <div class="form-field">
+
+
+                <label for="attendance">
+
+                    Ваш ответ
+
+                </label>
+
+
+                <select
+                    id="attendance"
+                    required
+                >
+
+                    <option value="">
+                        Выберите вариант
+                    </option>
+
+                    <option value="Буду">
+                        Да, обязательно буду
+                    </option>
+
+                    <option value="Не смогу">
+                        К сожалению, не смогу
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- GUESTS -->
+
+            <div class="form-field">
+
+
+                <label for="guestCount">
+
+                    Количество гостей
+
+                </label>
+
+
+                <select
+                    id="guestCount"
+                    required
+                >
+
+                    <option value="1">
+                        1
+                    </option>
+
+                    <option value="2">
+                        2
+                    </option>
+
+                    <option value="3">
+                        3
+                    </option>
+
+                    <option value="4">
+                        4
+                    </option>
+
+                    <option value="5">
+                        5
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- BUTTON -->
+
             <button
                 type="submit"
-                class="submit">
+                class="submit-button"
+            >
 
-                Жөнөтүү
+                Подтвердить присутствие
 
             </button>
 
+
         </form>
 
+
+
+        <!-- SUCCESS -->
+
+        <div
+            class="rsvp-success"
+            id="rsvpSuccess"
+        >
+
+            Спасибо ❤️
+
+            <br>
+
+            Ваш ответ получен.
+
+        </div>
+
+
     </div>
 
+
 </section>
+
 
 
 <!-- =====================================================
-     HOSTS
+     FINAL
 ===================================================== -->
 
-<section class="section hosts">
+<section class="section final-section">
 
-    <div class="inner reveal">
 
-        <div class="hosts-title">
-            Сиздерди урматтоо менен той ээлери:
+    <div class="container">
+
+
+        <div class="eyebrow">
+            С любовью
         </div>
 
 
-        <div class="hosts-names">
-            Алтынбек & Гулиса
+        <div class="final-names">
+
+            Айдар
+
+            <br>
+
+            &
+
+            <br>
+
+            Дия
+
         </div>
 
 
-        <div class="hosts-text">
-            Тойго келип,
-            конок болуп кетиңиздер!
+        <div class="final-date">
+
+            15 СЕНТЯБРЯ 2026
+
         </div>
+
 
     </div>
 
+
 </section>
+
 
 
 <!-- =====================================================
-     FINAL PHOTO
+     JAVASCRIPT
 ===================================================== -->
-
-<section class="final">
-
-    <div class="reveal">
-
-        <div class="script">
-            Айдар & Дия
-        </div>
-
-        <div class="final-text">
-            Биздин өзгөчө күнүбүздө
-            сиздерди күтөбүз 🤍
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
 
 <script>
 
+
 /* =====================================================
-   ENVELOPE
+   MUSIC
 ===================================================== */
-
-const envelope =
-    document.getElementById("envelope");
-
-const intro =
-    document.getElementById("intro");
-
-const site =
-    document.getElementById("site");
 
 const music =
-    document.getElementById("music");
-
-const musicBtn =
-    document.getElementById("musicBtn");
-
-
-let isPlaying = false;
+    document.getElementById(
+        "weddingMusic"
+    );
 
 
-envelope.addEventListener("click", async function () {
-
-    if (envelope.classList.contains("open")) {
-        return;
-    }
-
-
-    /* Open envelope */
-
-    envelope.classList.add("open");
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
 
 
-    /* Play music */
 
-    try {
+/*
+    Функция запуска музыки.
+*/
 
-        await music.play();
+function playWeddingMusic() {
 
-        isPlaying = true;
+    music
+        .play()
+        .then(function() {
 
-        musicBtn.classList.add("active");
+            musicButton.textContent =
+                "❚❚";
 
-        musicBtn.innerHTML = "❚❚";
+        })
+        .catch(function() {
 
-    } catch (error) {
+            /*
+                Если браузер заблокировал
+                автоматический запуск,
+                кнопка останется ♫.
+            */
 
-        console.log(
-            "Музыка браузер тарабынан бөгөттөлдү."
-        );
+            musicButton.textContent =
+                "♫";
 
-    }
+        });
 
-
-    /* Open main site */
-
-    setTimeout(function () {
-
-        intro.classList.add("hide");
-
-        site.classList.add("show");
-
-        document.body.style.overflow = "auto";
-
-    }, 1300);
-
-});
+}
 
 
-/* =====================================================
-   MUSIC BUTTON
-===================================================== */
 
-musicBtn.addEventListener("click", async function () {
+/*
+    Кнопка музыки.
+*/
 
-    if (isPlaying) {
+musicButton.addEventListener(
+    "click",
+    function() {
 
-        music.pause();
 
-        isPlaying = false;
+        if (
+            music.paused
+        ) {
 
-        musicBtn.innerHTML = "♪";
-
-    } else {
-
-        try {
-
-            await music.play();
-
-            isPlaying = true;
-
-            musicBtn.innerHTML = "❚❚";
-
-        } catch (error) {
-
-            console.log(error);
+            playWeddingMusic();
 
         }
 
-    }
+        else {
 
-});
+            music.pause();
+
+            musicButton.textContent =
+                "♫";
+
+        }
+
+
+    }
+);
+
+
+
+/*
+    Пытаемся запустить музыку
+    сразу после открытия сайта.
+*/
+
+window.addEventListener(
+    "load",
+    function() {
+
+        playWeddingMusic();
+
+    }
+);
+
+
+
+/*
+    На iPhone автозапуск может быть
+    заблокирован.
+
+    Поэтому после первого касания
+    экрана снова пробуем включить музыку.
+*/
+
+document.addEventListener(
+    "pointerdown",
+    function() {
+
+        if (
+            music.paused
+        ) {
+
+            playWeddingMusic();
+
+        }
+
+    },
+    {
+        once: true
+    }
+);
+
 
 
 /* =====================================================
    COUNTDOWN
 ===================================================== */
 
+
 /*
-    Той:
-    15 сентябрь 2026
+    Дата свадьбы:
+
+    15 сентября 2026
     15:00
-    Бишкек убактысы UTC+6
+    Бишкек = UTC+6
 */
 
 const weddingDate =
@@ -2012,265 +2279,365 @@ const weddingDate =
     ).getTime();
 
 
-function countdown() {
+
+function updateCountdown() {
+
 
     const now =
         new Date().getTime();
 
 
-    const distance =
+    const difference =
         weddingDate - now;
 
 
-    if (distance <= 0) {
 
-        document.getElementById("days")
-            .innerText = "00";
+    /*
+        Если дата уже наступила.
+    */
 
-        document.getElementById("hours")
-            .innerText = "00";
+    if (
+        difference <= 0
+    ) {
 
-        document.getElementById("minutes")
-            .innerText = "00";
 
-        document.getElementById("seconds")
-            .innerText = "00";
+        document.getElementById(
+            "days"
+        ).textContent = "0";
+
+
+        document.getElementById(
+            "hours"
+        ).textContent = "0";
+
+
+        document.getElementById(
+            "minutes"
+        ).textContent = "0";
+
+
+        document.getElementById(
+            "seconds"
+        ).textContent = "0";
+
 
         return;
+
     }
+
 
 
     const days =
         Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
+            difference /
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
         );
+
 
 
     const hours =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24))
-            /
-            (1000 * 60 * 60)
+            (
+                difference /
+                (
+                    1000 *
+                    60 *
+                    60
+                )
+            ) % 24
         );
+
 
 
     const minutes =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60))
-            /
-            (1000 * 60)
+            (
+                difference /
+                (
+                    1000 *
+                    60
+                )
+            ) % 60
         );
+
 
 
     const seconds =
         Math.floor(
-            (distance %
-            (1000 * 60))
-            /
-            1000
+            (
+                difference /
+                1000
+            ) % 60
         );
 
 
-    document.getElementById("days")
-        .innerText =
-        String(days).padStart(2,"0");
+
+    document.getElementById(
+        "days"
+    ).textContent = days;
 
 
-    document.getElementById("hours")
-        .innerText =
-        String(hours).padStart(2,"0");
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours)
+        .padStart(
+            2,
+            "0"
+        );
 
 
-    document.getElementById("minutes")
-        .innerText =
-        String(minutes).padStart(2,"0");
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes)
+        .padStart(
+            2,
+            "0"
+        );
 
 
-    document.getElementById("seconds")
-        .innerText =
-        String(seconds).padStart(2,"0");
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds)
+        .padStart(
+            2,
+            "0"
+        );
 
 }
 
 
-countdown();
 
-setInterval(countdown,1000);
+/*
+    Запускаем countdown.
+*/
+
+updateCountdown();
+
+
+
+/*
+    Обновляем каждую секунду.
+*/
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
 
 
 /* =====================================================
-   PEOPLE COUNTER
+   SCROLL ANIMATIONS
 ===================================================== */
 
-let peopleCount = 1;
 
-const people =
-    document.getElementById("people");
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
 
 
-document.getElementById("minus")
-    .addEventListener("click",function () {
 
-        if (peopleCount > 1) {
+const revealObserver =
+    new IntersectionObserver(
+        function(entries) {
 
-            peopleCount--;
 
-            people.innerText =
-                peopleCount;
+            entries.forEach(
+                function(entry) {
 
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add(
+                                "visible"
+                            );
+
+                    }
+
+
+                }
+            );
+
+
+        },
+        {
+            threshold: 0.12
         }
+    );
 
-    });
 
 
-document.getElementById("plus")
-    .addEventListener("click",function () {
+revealElements.forEach(
+    function(element) {
 
-        if (peopleCount < 20) {
+        revealObserver.observe(
+            element
+        );
 
-            peopleCount++;
+    }
+);
 
-            people.innerText =
-                peopleCount;
-
-        }
-
-    });
 
 
 /* =====================================================
    RSVP
 ===================================================== */
 
-document.getElementById("rsvpForm")
-    .addEventListener(
-        "submit",
-        function(event) {
 
-            event.preventDefault();
+/*
+    ПОКА GOOGLE ТАБЛИЦА НЕ ПОДКЛЮЧЕНА.
+
+    Позже сюда вставим ссылку
+    Google Apps Script.
+
+    Например:
+
+    const RSVP_URL =
+    "https://script.google.com/...";
+
+*/
+
+const RSVP_URL = "";
 
 
-            const selected =
-                document.querySelector(
-                    'input[name="attendance"]:checked'
+
+const rsvpForm =
+    document.getElementById(
+        "rsvpForm"
+    );
+
+
+const rsvpSuccess =
+    document.getElementById(
+        "rsvpSuccess"
+    );
+
+
+
+rsvpForm.addEventListener(
+    "submit",
+    async function(event) {
+
+
+        event.preventDefault();
+
+
+
+        /*
+            Получаем данные гостя.
+        */
+
+        const name =
+            document.getElementById(
+                "guestName"
+            ).value;
+
+
+        const attendance =
+            document.getElementById(
+                "attendance"
+            ).value;
+
+
+        const guests =
+            document.getElementById(
+                "guestCount"
+            ).value;
+
+
+
+        /*
+            Если Google Таблица
+            уже подключена,
+            отправляем данные.
+        */
+
+        if (
+            RSVP_URL
+        ) {
+
+
+            try {
+
+
+                await fetch(
+                    RSVP_URL,
+                    {
+
+                        method:
+                            "POST",
+
+                        body:
+                            new URLSearchParams({
+
+                                name:
+                                    name,
+
+                                attendance:
+                                    attendance,
+
+                                guests:
+                                    guests
+
+                            })
+
+                    }
                 );
 
 
-            const guestName =
-                document.getElementById("name")
-                    .value
-                    .trim();
+            }
+
+            catch(error) {
 
 
-            if (!selected || !guestName) {
-
-                alert(
-                    "Сураныч, маалыматтарды толтуруңуз."
+                console.log(
+                    "Ошибка отправки:",
+                    error
                 );
 
-                return;
 
             }
 
 
-            /*
-             * WHATSAPP НОМЕРИ
-             *
-             * Бул жерге кийин номер коёбуз.
-             *
-             * Мисалы:
-             *
-             * const whatsapp =
-             * "996700123456";
-             */
-
-            const whatsapp = "";
-
-
-            const message =
-                `Айдар & Дия — тойго жооп%0A%0A` +
-                `Аты: ${encodeURIComponent(guestName)}%0A` +
-                `Жооп: ${encodeURIComponent(selected.value)}%0A` +
-                `Адам саны: ${peopleCount}`;
-
-
-            if (whatsapp !== "") {
-
-                const url =
-                    `https://wa.me/${whatsapp}?text=${message}`;
-
-                window.open(
-                    url,
-                    "_blank"
-                );
-
-            } else {
-
-                alert(
-                    "Рахмат! Жообуңуз кабыл алынды 🤍"
-                );
-
-            }
-
-
-            this.reset();
-
-            peopleCount = 1;
-
-            people.innerText = "1";
-
         }
-    );
 
 
-/* =====================================================
-   SCROLL ANIMATION
-===================================================== */
 
-const elements =
-    document.querySelectorAll(".reveal");
+        /*
+            После отправки
+            показываем сообщение.
+        */
 
-
-const observer =
-    new IntersectionObserver(
-        function(entries) {
-
-            entries.forEach(function(entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: .12
-        }
-    );
+        rsvpForm.style.display =
+            "none";
 
 
-elements.forEach(function(element) {
-
-    observer.observe(element);
-
-});
+        rsvpSuccess.style.display =
+            "block";
 
 
-/* =====================================================
-   LOCK SCROLL BEFORE OPEN
-===================================================== */
+    }
+);
 
-document.body.style.overflow = "hidden";
 
 </script>
+
 
 </body>
 </html>
